@@ -22,6 +22,12 @@ int main()
 	scanf("%s",str);
 	write(fd,str,strlen(str)+1);
 
+	close(fd);
+
+	fd=open("f1",O_RDONLY);
+	read(fd,str,sizeof(str));
+	printf("%s\n",str);
+	close(fd);
 	printf("Done\n");
 }
 
